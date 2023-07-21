@@ -1,0 +1,121 @@
+<html style="height: 100%;">
+<head>
+        <title>Hi</title>
+</head>
+
+<style>
+body {
+  background-color: black;
+}
+
+p1 {
+  color: red;
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-align: center;
+}
+
+#container {
+	margin-top: 10%;
+}
+
+.trans {
+  width: 15%;
+  aspect-ratio : 1 / 1;
+  background-image: url("./NSRALogo.png");  
+  background-size: cover;  
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+body {
+	text-align: center
+}
+
+</style>
+
+<script>
+ function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function move() {
+  let display_types = ['block','inline','inline-block','flex','inline-flex','grid',
+                     'inline-grid','flow-root','none','contents','blockflow',
+                     'inline flow','inline flow-root','block flex','inline flex',
+                     'block grid','inline grid','block flow-root','table',
+                     'table-row','list-item','inherit','initial','revert',
+                     'revert-layer','unset']
+let position_types = [
+   'static',
+    'relative',
+    'fixed',
+    'absolute',
+    'sticky'
+]
+
+let float_types = [
+'none','left','right','initial','inherit'
+]
+  
+  let trans1 = document.getElementById('trans1');
+  let trans2 = document.getElementById('trans2');
+  let trans3 = document.getElementById('trans3');
+  
+  let idx1 = Math.floor(Math.random() * display_types.length);
+  let idx2 = Math.floor(Math.random() * display_types.length);
+  let idx3 = Math.floor(Math.random() * display_types.length);
+  
+  trans1.style.display = display_types[idx1];
+  trans2.style.display = display_types[idx2];
+  trans3.style.display = display_types[idx3];
+  
+  let pidx1 = Math.floor(Math.random() * position_types.length);
+  let pidx2 = Math.floor(Math.random() * position_types.length);
+  let pidx3 = Math.floor(Math.random() * position_types.length);
+  
+  trans1.style.position = position_types[pidx1];
+  trans2.style.position = position_types[pidx2];
+  trans3.style.position = position_types[pidx3];
+  
+  let fidx1 = Math.floor(Math.random() * float_types.length);
+  let fidx2 = Math.floor(Math.random() * float_types.length);
+  let fidx3 = Math.floor(Math.random() * float_types.length);
+  
+  trans1.style.float = float_types[pidx1];
+  trans2.style.float = float_types[pidx2];
+  trans3.style.float = float_types[pidx3];
+};
+
+function start(){
+  move();
+  window.setInterval(move, 200);
+};
+
+function start(){
+  move();
+  window.setInterval(move, 250);
+}
+</script>
+
+<body style="margin: 0px; height: 100% display: flex;" onload="start()">
+  <p1>NSRA is the hardest working tenants union in chicago.</p1>
+  <p1>email: northspauldingrenters@gmail.com</p1>
+  
+  <div id="container">
+    <div class="trans" id="trans1">
+      <p1>join</p1>
+    </div>
+    <div class="trans" id="trans2">
+      <p1>join</p1>
+    </div>
+    <div class="trans" id="trans3">
+      <p1>join</p1>
+    </div>
+  </div> 
+</body>
+  
+</html>
